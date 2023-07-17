@@ -1,0 +1,12 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.array([82, 85, 55, 60, 75, 15, 25, 70, 35, 90, 75, 45, 65, 75, 78])
+data.sort()
+k_nilai = np.where(data >= 81, 'A', np.where(data >= 61, 'B', np.where(data >= 41, 'C', np.where(data >= 21, 'D', 'E'))))
+x_class, frekuensi = np.unique(k_nilai, return_counts=True)
+plt.bar(x_class, frekuensi)
+plt.xlabel('Kelas')
+plt.ylabel('Frekuensi')
+plt.title('Distribusi Data')
+plt.show()
